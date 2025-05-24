@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
+    <style>
+        /* This is CSS - it makes things look pretty! */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .emoji {
+            font-size: 60px;
+            margin: 20px 0;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+        }
+        
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .fun-fact {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Welcome to Your First Website!</h1>
+        
+        <div class="emoji" id="emoji">😊</div>
+        
+        <p>Congratulations! You've just created your first web page. This is where your coding journey begins!</p>
+        
+        <button onclick="changeEmoji()">Change Emoji</button>
+        <button onclick="showMessage()">Click for Surprise</button>
+        <button onclick="changeBackground()">Change Background</button>
+        
+        <div id="message"></div>
+        
+        <div class="fun-fact">
+            <h3>🎯 Try This:</h3>
+            <p>Right-click anywhere and select "Inspect" to see the code!</p>
+            <p>Change the text between the &lt;h1&gt; tags and save to see it update.</p>
+        </div>
+    </div>
+
+    <script>
+        // This is JavaScript - it makes things interactive!
+        
+        // Array of emojis to cycle through
+        const emojis = ['😊', '🚀', '🎨', '💻', '🌟', '🎯', '🔥', '🦄', '🌈', '✨'];
+        let currentEmoji = 0;
+        
+        // Function to change the emoji
+        function changeEmoji() {
+            currentEmoji = (currentEmoji + 1) % emojis.length;
+            document.getElementById('emoji').textContent = emojis[currentEmoji];
+        }
+        
+        // Function to show a message
+        function showMessage() {
+            const messages = [
+                "You're doing great! 🎉",
+                "Keep coding! 💪",
+                "You're a natural! ⭐",
+                "The world needs your ideas! 🌍",
+                "Code is poetry! 📝"
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('message').textContent = randomMessage;
+        }
+        
+        // Function to change background color
+        function changeBackground() {
+            const colors = [
+                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+                'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+                'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+            ];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.background = randomColor;
+        }
+        
+        // Welcome message in the console
+        console.log("🎉 Welcome to coding! Open the console to see this message!");
+        console.log("Try typing: alert('Hello World!')");
+    </script>
+</body>
+</html>
